@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Youtube entries</h1>
+
+<div id="youtube_entries">
+  <% @youtube_entries.each do |youtube_entry| %>
+    <%= render youtube_entry %>
+    <p>
+      <%= link_to "Show this youtube entry", youtube_entry %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New youtube entry", new_youtube_entry_path %>

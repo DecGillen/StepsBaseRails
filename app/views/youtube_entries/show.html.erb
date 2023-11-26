@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @youtube_entry %>
+
+<div>
+  <%= link_to "Edit this youtube entry", edit_youtube_entry_path(@youtube_entry) %> |
+  <%= link_to "Back to youtube entries", youtube_entries_path %>
+
+  <%= button_to "Destroy this youtube entry", @youtube_entry, method: :delete %>
+</div>

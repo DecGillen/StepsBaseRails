@@ -1,0 +1,32 @@
+<%= form_with(model: youtube_entry) do |form| %>
+  <% if youtube_entry.errors.any? %>
+    <div style="color: red">
+      <h2><%= pluralize(youtube_entry.errors.count, "error") %> prohibited this youtube_entry from being saved:</h2>
+
+      <ul>
+        <% youtube_entry.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div>
+    <%= form.label :title, style: "display: block" %>
+    <%= form.text_field :title %>
+  </div>
+
+  <div>
+    <%= form.label :embed_link, style: "display: block" %>
+    <%= form.text_field :embed_link %>
+  </div>
+
+  <div>
+    <%= form.label :user_id, style: "display: block" %>
+    <%= form.text_field :user_id %>
+  </div>
+
+  <div>
+    <%= form.submit %>
+  </div>
+<% end %>

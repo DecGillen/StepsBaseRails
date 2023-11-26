@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\app",
+    "\\app\\controllers",
+    "\\app\\models",
+    "\\app\\views",
+    "\\app\\views\\youtube_entries",
+    "\\config",
+    "\\config\\environments",
+    "\\db",
+    "\\db\\migrate"
+  ],
+  "PreviewInSolutionExplorer": false
+}
