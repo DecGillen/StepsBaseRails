@@ -12,7 +12,7 @@ if [ -n "$CONTAINER_EXISTS" ]; then
   sudo docker rm "$CONTAINER_NAME"
 fi
 
-sudo docker create -p 8443:8443 --name "$CONTAINER_NAME" "$IMAGE_NAME"
+sudo docker create -p 8443:8443 -p 3000:3000 --name "$CONTAINER_NAME" "$IMAGE_NAME"
 sudo docker cp ./privatekey.pem "$CONTAINER_NAME":
 sudo docker cp ./server.crt "$CONTAINER_NAME":
 
