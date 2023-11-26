@@ -13,7 +13,7 @@ if [ -n "$CONTAINER_EXISTS" ]; then
 fi
 
 sudo docker create -p 443:443 -p 3000:3000 --name "$CONTAINER_NAME" "$IMAGE_NAME"
-sudo docker cp ./privatekey.pem "$CONTAINER_NAME":
-sudo docker cp ./server.crt "$CONTAINER_NAME":
+sudo docker cp ./privatekey.pem "$CONTAINER_NAME":/usr/src/app/
+sudo docker cp ./server.crt "$CONTAINER_NAME":/usr/src/app/
             
 sudo docker start "$CONTAINER_NAME"
