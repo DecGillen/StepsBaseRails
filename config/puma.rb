@@ -21,7 +21,7 @@ port ENV.fetch("PORT") { 3000 }
 #	cert: '/usr/src/app/server.crt',
 #	key_pem: '/usr/src/app/privatekey.pem'
 #}
-bind "ssl://0.0.0.0:443?key=/usr/src/app/privatekey.pem&cert=/usr/src/app/server.crt"
+#bind "ssl://0.0.0.0:443?key=/usr/src/app/privatekey.pem&cert=/usr/src/app/server.crt"
 
 
 # Specifies the `environment` that Puma will run in.
