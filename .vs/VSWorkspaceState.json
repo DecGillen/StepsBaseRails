@@ -1,8 +1,8 @@
 {
   "ExpandedNodes": [
     "",
+    "\\.circleci",
     "\\app",
-    "\\app\\controllers",
     "\\app\\models",
     "\\app\\views",
     "\\app\\views\\youtube_entries",
@@ -11,5 +11,6 @@
     "\\db",
     "\\db\\migrate"
   ],
+  "SelectedNode": "\\.circleci\\config.yml",
   "PreviewInSolutionExplorer": false
 }
