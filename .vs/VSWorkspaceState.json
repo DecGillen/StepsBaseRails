@@ -1,16 +1,17 @@
 {
   "ExpandedNodes": [
     "",
-    "\\.circleci",
     "\\app",
-    "\\app\\models",
+    "\\app\\assets",
+    "\\app\\assets\\config",
+    "\\app\\controllers",
     "\\app\\views",
-    "\\app\\views\\youtube_entries",
+    "\\app\\views\\layouts",
+    "\\bin",
     "\\config",
     "\\config\\environments",
-    "\\db",
-    "\\db\\migrate"
+    "\\config\\initializers"
   ],
-  "SelectedNode": "\\.circleci\\config.yml",
+  "SelectedNode": "\\app\\controllers\\youtube_entries_controller.rb",
   "PreviewInSolutionExplorer": false
 }

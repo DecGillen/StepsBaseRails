@@ -1,6 +1,6 @@
 class FavouritesController < ApplicationController
     protect_from_forgery with: :exception, unless: -> {request.format.json?}
-  before_action :set_youtube_entry, only: %i[ show edit update destroy ]
+  before_action :set_favourite, only: %i[ show edit update destroy ]
 
   # GET /favourites or /favourites.json
   def index
@@ -67,7 +67,7 @@ end
 
     # Only allow a list of trusted parameters through.
 def favourite_params
-  params.require(:favourite).permit(:title, :embed_link, :user_uid, :entryUserUid)
+  params.require(:favourite).permit(:title, :embed_link, :user_uid, :logged_user)
 end
 
 end
