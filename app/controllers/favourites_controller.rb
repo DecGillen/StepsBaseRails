@@ -59,6 +59,18 @@ end
     end
   end
 
+  #this should render only the favourites belonging to the logged in user
+    def show_favourites
+    user_uid = current_user&.uid
+
+    if user_uid
+      @favourites = Favourite.where(user_uid: user_uid)
+      render json: { favourites: @favourites }
+    else
+      render json: { error: 'User not found' }, status: :not_found
+    end
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_favourite
