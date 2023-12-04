@@ -1,6 +1,6 @@
 class FavouritesController < ApplicationController
-    protect_from_forgery with: :exception, unless: -> {request.format.json?}
-  before_action :set_favourite, only: %i[ show edit update destroy ]
+  protect_from_forgery with: :exception, unless: -> { request.format.json? }
+  before_action :set_favourite, only: %i[show edit update destroy]
 
   # GET /favourites or /favourites.json
   def index
@@ -9,7 +9,19 @@ class FavouritesController < ApplicationController
 
   # GET /favourites/1 or /favourites/1.json
   def show
+    user_uid = params[:user_uid]
+  puts "Received user_uid: #{user_uid}"
+
+  if user_uid
+    @favourites = Favourite.where(user_uid: user_uid)
+
+    respond_to do |format|
+      format.json { render json: { favourites: @favourites } }
+    end
+  else
+    render json: { error: 'User not found' }, status: :not_found
   end
+end
 
   # GET /favourites/new
   def new
@@ -60,26 +72,31 @@ end
   end
 
   #this should render only the favourites belonging to the logged in user
-    def show_favourites
-    user_uid = current_user&.uid
+def show_favourites
+  user_uid = params[:user_uid]
+  puts "Received user_uid: #{user_uid}"
 
-    if user_uid
-      @favourites = Favourite.where(user_uid: user_uid)
-      render json: { favourites: @favourites }
-    else
-      render json: { error: 'User not found' }, status: :not_found
+  if user_uid
+    @favourites = Favourite.where(user_uid: user_uid)
+
+    respond_to do |format|
+      format.json { render json: { favourites: @favourites } }
     end
+  else
+    render json: { error: 'User not found' }, status: :not_found
   end
-
-  private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_favourite
-      @favourite = Favourite.find(params[:id])
-    end
-
-    # Only allow a list of trusted parameters through.
-def favourite_params
-  params.require(:favourite).permit(:title, :embed_link, :user_uid, :logged_user)
 end
 
+
+  private
+
+  # Use callbacks to share common setup or constraints between actions.
+  def set_favourite
+    # Do nothing for show_favourites action
+  end
+
+  # Only allow a list of trusted parameters through.
+  def favourite_params
+    params.require(:favourite).permit(:title, :embed_link, :user_uid, :logged_user)
+  end
 end

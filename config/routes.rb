@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   resources :users
   resources :youtube_entries #, only: [:index, :create, :show, :update, :destroy]
   get '/users/find_userName/:user_uid', to: 'users#find_userName'
+get '/favourites/show_favourites', to: 'favourites#show_favourites'
 
   # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
 
