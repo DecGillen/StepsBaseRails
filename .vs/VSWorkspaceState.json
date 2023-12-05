@@ -2,15 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
+    "\\app\\controllers",
+    "\\app\\models",
     "\\app\\views",
-    "\\app\\views\\favourites",
-    "\\app\\views\\layouts",
     "\\app\\views\\youtube_entries",
     "\\bin",
     "\\config",
     "\\config\\environments",
     "\\config\\initializers"
   ],
-  "SelectedNode": "\\config\\routes.rb",
+  "SelectedNode": "\\app\\controllers\\youtube_entries_controller.rb",
   "PreviewInSolutionExplorer": false
 }

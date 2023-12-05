@@ -15,6 +15,16 @@ class YoutubeEntriesController < ApplicationController
   def new
     @youtube_entry = YoutubeEntry.new
   end
+  
+  #get youtube entries where the user_uid matches the currently logged in user
+def show_myvideos
+  userName = params[:userName] # Change user_uid to userName
+  @youtube_entries = YoutubeEntry.where(user_uid: userName) # Change user_uid to userName
+  puts "Received userName: #{userName}" # Change user_uid to userName
+  respond_to do |format|
+    format.json { render json: { youtube_entries: @youtube_entries } }
+  end
+end
 
   # GET /youtube_entries/1/edit
   def edit

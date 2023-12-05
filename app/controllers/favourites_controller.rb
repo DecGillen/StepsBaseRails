@@ -91,9 +91,14 @@ end
   private
 
   # Use callbacks to share common setup or constraints between actions.
-  def set_favourite
-    # Do nothing for show_favourites action
+def set_favourite
+  if action_name == 'show_favourites'
+    @favourites = Favourite.where(user_uid: params[:user_uid])
+  else
+    @favourite = Favourite.find_by(id: params[:id])
   end
+end
+
 
   # Only allow a list of trusted parameters through.
   def favourite_params
