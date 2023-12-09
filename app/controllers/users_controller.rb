@@ -58,18 +58,17 @@ protect_from_forgery with: :exception, unless: -> {request.format.json?}
     end
   end
   #this function calls the user's username instead of their email address or userID
-  def find_userName
-    user_uid = params[:user_uid]
-    puts "Received user_uid: #{user_uid}"
+ def find_userName
+  user_uid = params[:user_uid]
+  puts "Received user_uid: #{user_uid}"#this should print something to tell me why I can't see the username?
+ user = User.find_by(user_uid: user_uid)
 
-    user = User.find_by(user_uid: user_uid)
-
-    if user
-      render json: { userName: user.userName }
-    else
-      render json: { error: 'User not found' }, status: :not_found
-    end
+  if user
+    render json: { userName: user.userName }
+  else
+    render json: { error: 'User not found' }, status: :not_found
   end
+end
 
 end
 

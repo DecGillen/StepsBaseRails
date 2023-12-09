@@ -11,6 +11,6 @@
     "\\config\\environments",
     "\\config\\initializers"
   ],
-  "SelectedNode": "\\Gemfile",
+  "SelectedNode": "\\app\\controllers\\users_controller.rb",
   "PreviewInSolutionExplorer": false
 }
