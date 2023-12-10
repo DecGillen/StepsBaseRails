@@ -8,8 +8,8 @@ COPY nginx /etc/nginx/sites-available
 RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 
 # Copy SSL certificate and private key
-COPY server.crt /usr/src/
-COPY privatekey.pem /usr/src/
+COPY server.crt /usr/src/app/
+COPY privatekey.pem /usr/src/app/
 
 COPY . /usr/src/app/
 ARG SECRET_KEY_BASE
