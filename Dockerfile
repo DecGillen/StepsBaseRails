@@ -7,10 +7,6 @@ RUN apt-get install -yqq --no-install-recommends nodejs
 COPY nginx /etc/nginx/sites-available
 RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 
-# Copy SSL certificate and private key
-COPY server.crt /home/ubuntu/
-COPY privatekey.pem /home/ubuntu/
-
 COPY . /usr/src/app/
 ARG SECRET_KEY_BASE
 
