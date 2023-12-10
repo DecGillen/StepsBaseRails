@@ -4,7 +4,8 @@ RUN apt-get update -yqq
 RUN apt-get install -yqq --no-install-recommends nodejs
 
 # pray this works
-COPY nginx /usr/src/app/nginx
+COPY nginx /etc/nginx/sites-available
+RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
 
 COPY . /usr/src/app/
 ARG SECRET_KEY_BASE
