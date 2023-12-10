@@ -3,9 +3,13 @@ FROM ruby:3.0.0
 RUN apt-get update -yqq
 RUN apt-get install -yqq --no-install-recommends nodejs
 
-# pray this works
+# Copy Nginx configuration
 COPY nginx /etc/nginx/sites-available
 RUN ln -s /etc/nginx/sites-available/default /etc/nginx/sites-enabled
+
+# Copy SSL certificate and private key
+COPY ../server.crt /usr/src/app/server.crt
+COPY ../privatekey.pem /usr/src/app/privatekey.pem
 
 COPY . /usr/src/app/
 ARG SECRET_KEY_BASE
