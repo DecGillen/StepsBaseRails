@@ -3,14 +3,15 @@
     "",
     "\\app",
     "\\app\\controllers",
-    "\\app\\models",
-    "\\app\\views",
-    "\\app\\views\\youtube_entries",
-    "\\bin",
+    "\\app\\controllers\\concerns",
+    "\\app\\helpers",
+    "\\app\\javascript",
+    "\\app\\javascript\\controllers",
+    "\\app\\jobs",
+    "\\app\\mailers",
     "\\config",
-    "\\config\\environments",
-    "\\config\\initializers"
+    "\\config\\locales"
   ],
-  "SelectedNode": "\\app\\controllers\\users_controller.rb",
+  "SelectedNode": "\\app\\controllers\\youtube_entries_controller.rb",
   "PreviewInSolutionExplorer": false
 }
