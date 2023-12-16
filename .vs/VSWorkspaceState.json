@@ -2,16 +2,15 @@
   "ExpandedNodes": [
     "",
     "\\app",
-    "\\app\\controllers",
-    "\\app\\controllers\\concerns",
     "\\app\\helpers",
     "\\app\\javascript",
     "\\app\\javascript\\controllers",
     "\\app\\jobs",
     "\\app\\mailers",
     "\\config",
-    "\\config\\locales"
+    "\\config\\locales",
+    "\\db"
   ],
-  "SelectedNode": "\\app\\controllers\\youtube_entries_controller.rb",
+  "SelectedNode": "\\config\\puma.rb",
   "PreviewInSolutionExplorer": false
 }
